@@ -1,3 +1,3 @@
 string=input()
-string.swapcasw()
-print(string)
+string.swapcase()
+print(string.swapcase())
