@@ -1,4 +1,5 @@
 c=300000000
-m=input("m: ")
+c=3
+m=int(input("m: "))
 e=m*c*c
-print(f"E: {e}")
+print(f"E: {e}0000000000000000")
