@@ -1,6 +1,7 @@
 ext=input("Extenstions: ")
 ext=ext.strip()
 x=int(ext.rfind("."))
+name=ext[:x]
 string=ext[x+1:].lower()
 match string:
     case "gif":
@@ -14,8 +15,8 @@ match string:
     case "pdf":
         print(f"application/{string}")
     case "txt":
-        print(f"image/{string}")
+        print(f"{name}/text")
     case "zip":
-        print(f"image/{string}")
+        print(f"application/{string}")
     case _:
         print("application/octet-stream")
