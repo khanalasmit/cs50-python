@@ -11,7 +11,7 @@ match string:
     case "png":
         print(f"image/{string}")
     case "pdf":
-        print(f"image/{string}")
+        print(f"application/{string}")
     case "txt":
         print(f"image/{string}")
     case "zip":
