@@ -1,4 +1,5 @@
 ext=input("Extenstions: ")
+ext=ext.strip()
 x=int(ext.find("."))
 string=ext[x+1:].lower()
 match string:
