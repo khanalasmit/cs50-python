@@ -1,0 +1,20 @@
+ext=input("Extenstions: ")
+x=int(ext.find("."))
+string=ext[x+1:]
+match string:
+    case "gif":
+        print(f"image/{string}")
+    case "jpg":
+        print(f"image/{string}")
+    case "jpeg":
+        print(f"image/{string}")
+    case "png":
+        print(f"image/{string}")
+    case "pdf":
+        print(f"image/{string}")
+    case "txt":
+        print(f"image/{string}")
+    case "zip":
+        print(f"image/{string}")
+    case _:
+        print("application/octet-stream")
