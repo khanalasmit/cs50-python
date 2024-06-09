@@ -6,7 +6,7 @@ match string:
     case "gif":
         print(f"image/{string}")
     case "jpg":
-        print(f"image/{string}")
+        print(f"image/jpeg")
     case "jpeg":
         print(f"image/{string}")
     case "png":
