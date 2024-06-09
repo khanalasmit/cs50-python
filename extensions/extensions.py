@@ -1,6 +1,6 @@
 ext=input("Extenstions: ")
 x=int(ext.find("."))
-string=ext[x+1:]
+string=ext[x+1:].lower().
 match string:
     case "gif":
         print(f"image/{string}")
