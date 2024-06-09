@@ -15,7 +15,7 @@ match string:
     case "pdf":
         print(f"application/{string}")
     case "txt":
-        print(f"{name}/text")
+        print(f"text/{name}")
     case "zip":
         print(f"application/{string}")
     case _:
