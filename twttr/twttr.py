@@ -1,4 +1,4 @@
-string=input("enter a string: ")
+string=input("Input")
 string=list(string)
 i=0
 while i<len(string):
