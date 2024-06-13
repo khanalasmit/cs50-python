@@ -9,3 +9,4 @@ while True:
     elif sum>=50:
         print(f"Change owned: ${sum-50}")
         break
+
