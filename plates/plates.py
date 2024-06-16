@@ -25,8 +25,12 @@ def is_valid(s):
         i+=1
     if s[len(s)-2]=="0":
         return False
+    for i in range(2, len(s)):
+        if s[i] in li:
+            return False
+        else:
+            pass
     return True
-
 
 
 
