@@ -25,7 +25,7 @@ def is_valid(s):
         return False
 
     # Check if the plate ends in "0"
-    if len(s) > 1 and s[-1] == "0" and s[-2] in li:
+    if s[len(s)-2]=="0":
         return False
 
     # Check if numbers appear in between letters
