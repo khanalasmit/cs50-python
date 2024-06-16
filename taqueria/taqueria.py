@@ -16,8 +16,8 @@ def main():
             items=input("Item: ")
             for food in foods:
                 if food==items.lower().title():
-                    total=total+foods[food]
-                    print(f"Total: ${total}")
+                    total=float(total)+float(foods[food])
+                    print(f"Total: ${total:.2f}")
                 else:
                     pass
         except EOFError:
