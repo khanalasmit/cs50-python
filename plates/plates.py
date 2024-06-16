@@ -7,31 +7,38 @@ def main():
 
 
 def is_valid(s):
-    li="1234567890"
-    li2="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
-    li3="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    s=list(s)
-    if 2<=len(s)<=6:
-        pass
-    else:
+    li = "1234567890"
+    li2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    li3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+    # Check the length of the plate
+    if not (2 <= len(s) <= 6):
         return False
+
+    # Check if all characters are alphanumeric
     for char in s:
         if char not in li2:
             return False
-    i=0
-    while i<2:
-        if s[i] not in li3:
-            return False
-        i+=1
-    if s[len(s)-2]=="0":
+
+    # Check if the first two characters are letters
+    if not (s[0] in li3 and s[1] in li3):
         return False
+
+    # Check if the plate ends in "0"
+    if len(s) > 1 and s[-1] == "0" and s[-2] in li:
+        return False
+
+    # Check if numbers appear in between letters
+    found_number = False
     for i in range(2, len(s)):
         if s[i] in li:
+            found_number = True
+        elif found_number:
             return False
-        else:
-            pass
+
+    # If all checks pass, the plate is valid
     return True
 
 
-
-main()
+if __name__ == "__main__":
+    main()
