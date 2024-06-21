@@ -15,18 +15,22 @@ li1=list("1")
 li1.remove("1")
 li2=list("a")
 li2.remove("a")
-for char in grocery:
-    while j<len(grocery):
-        if char==grocery[j]:
-            count+=1
-            grocery.remove(grocery[j])
-        j+=1
-    j=0
-    li1.append(count)
-    li2.append(char)
-    count=0
-for itm in li2:
-    for cot in li1:
-        print(cot,itm.upper())
-        li1.remove(cot)
-        break
+if len(grocery)<=2:
+    for char in grocery:
+        print("1",char)
+else:
+    for char in grocery:
+        while j<len(grocery):
+            if char==grocery[j]:
+                count+=1
+                grocery.remove(grocery[j])
+            j+=1
+        j=0
+        li1.append(count)
+        li2.append(char)
+        count=0
+    for itm in li2:
+        for cot in li1:
+            print(cot,itm.upper())
+            li1.remove(cot)
+            break
