@@ -15,7 +15,10 @@ li1=list("1")
 li1.remove("1")
 li2=list("a")
 li2.remove("a")
-if len(grocery)<=2 and grocery[0]!=grocery[1]:
+if len(grocery)==2 and grocery[0]!=grocery[1]:
+    for char in grocery:
+        print("1",char.upper())
+elif len(grocery)==1:
     for char in grocery:
         print("1",char.upper())
 else:
