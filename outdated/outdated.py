@@ -31,6 +31,9 @@ def main():
     elif date[0] not in li:
         if isvalid(date):
             fi,sec,thi=date.split("/")
+            fi=fi.strip()
+            sec=sec.strip()
+            thi=thi.strip()
             if len(sec)==1 and len(fi)==1:
                 print(f"{thi}-0{fi}-0{sec}")
             elif len(sec)==1 and len(fi)==2:
