@@ -16,9 +16,9 @@ def main():
     date=input("Date: ")
     li="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     if date[0].upper() in li:
-        first,second,third=date.split(" ")
-        second=second.replace(","," ").strip()
         if validate(date):
+            first,second,third=date.split(" ")
+            second=second.replace(","," ").strip()
             if len(second)==1 and len(months[first])==1:
                 print(f"{third}-0{months[first]}-0{second}")
             elif len(second)==1:
@@ -45,8 +45,8 @@ def main():
         else:
             pass
 def validate(date):
-    first,sec,third=date.split(" ")
     if "," in date:
+        first,sec,third=date.split(" ")
         if first in months:
             return True
         else:
