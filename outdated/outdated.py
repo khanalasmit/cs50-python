@@ -22,7 +22,7 @@ def main():
             if len(second)==1 and len(months[first])==1:
                 print(f"{third}-0{months[first]}-0{second}")
             elif len(second)==1:
-                print(f"{third}-{months}-0{second}")
+                print(f"{third}-{months[first]}-0{second}")
             elif len(months[first])==1:
                 print(f"{third}-0{months[first]}-{second}")
 
