@@ -51,7 +51,7 @@ def validate(date):
             return True
         else()
             main()
-    elif "/" in date or "," not in date:
+    else:
         main()
 def isvalid(date):
     if "/" in date:
