@@ -47,7 +47,7 @@ def main():
 def validate(date):
     if "," in date:
         first,sec,third=date.split(" ")
-        if first in months:
+        if first in months and int(sec)<=30:
             return True
         else:
             main()
