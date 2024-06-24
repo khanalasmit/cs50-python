@@ -50,8 +50,8 @@ def validate(date):
 def isvalid(date):
     if "/" in date:
         first,second,third=date.split("/")
-        if first>12:
+        if first<=12 and second<=30:
             return True
-    else:
-        main()
+        else:
+            main()
 main()
