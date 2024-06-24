@@ -54,4 +54,6 @@ def isvalid(date):
             return True
         else:
             main()
+    else:
+        main()
 main()
