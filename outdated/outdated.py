@@ -46,12 +46,12 @@ def main():
             pass
 def validate(date):
     first,sec,third=date.split(" ")
-    if "/" not in date or "," in date:
+    if "," in date:
         if first in months:
             return True
-        else:
+        else()
             main()
-    else:
+    elif "/" in date or "," not in date:
         main()
 def isvalid(date):
     if "/" in date:
