@@ -49,7 +49,7 @@ def validate(date):
     if "," in date:
         if first in months:
             return True
-        else()
+        else:
             main()
     else:
         main()
