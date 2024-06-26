@@ -2,7 +2,7 @@ import random
 while True:
     try:
         n=int(input("Level: "))
-        if n<0:
+        if n<=0:
             continue
         elif n>50:
             pass
