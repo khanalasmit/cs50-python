@@ -1,5 +1,13 @@
 import random
-n=int(input("Level: "))
+while True:
+    try:
+        n=int(input("Level: "))
+        if n<0:
+            continue
+        else:
+            break
+    except TypeError:
+        pass
 def guess():
     try:
         guess=int(input("Guess: "))
@@ -13,7 +21,7 @@ while True:
         if number<=0:
             continue
         elif number==num:
-            print("Just right")
+            print("Just right!")
             exit()
         elif number<num:
             print("Too small!")
