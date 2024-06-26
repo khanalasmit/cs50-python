@@ -2,7 +2,7 @@ import pyfiglet
 import sys
 try:
     if len(sys.argv)>=2:
-        f=pyfiglet.figlet_format(input("Input: "), font=sys.argv[2])
+        f=pyfiglet.figlet_format(font=sys.argv[2],input("Input: "),)
         if sys.argv[1]=="-f":
             print("Output:")
             print(f)
