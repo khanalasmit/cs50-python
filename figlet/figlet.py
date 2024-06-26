@@ -1,9 +1,8 @@
 import pyfiglet
 import sys
-string=input("Input: ")
 try:
     if len(sys.argv)>=2:
-        f=pyfiglet.figlet_format(string, font=sys.argv[2])
+        f=pyfiglet.figlet_format(input("Input: "), font=sys.argv[2])
         if sys.argv[1]=="-f":
             print("Output:")
             print(f)
