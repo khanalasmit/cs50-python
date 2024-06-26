@@ -8,5 +8,5 @@ try:
         print(f)
     else:
         sys.exit("Invalid usage")
-except pyfiglet.FontNotFound:
+except (pyfiglet.FontNotFound,IndexError):
     sys.exit("Invlaid usage")
