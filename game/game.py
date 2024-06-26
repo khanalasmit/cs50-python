@@ -10,7 +10,7 @@ while True:
         if number<=0:
             continue
         elif number==num:
-            print("Just right")
+            print("Just right!")
             exit()
         elif number<num:
             print("Too small!")
