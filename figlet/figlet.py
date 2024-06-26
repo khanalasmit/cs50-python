@@ -9,7 +9,7 @@ try:
         else:
             sys.exit("Invalid usage")
     else:
-        f=pyfiglet.figlet_format(string)
+        f=pyfiglet.figlet_format(input("Input: "))
         print("Output: ")
         print(f)
 except (pyfiglet.FontNotFound,IndexError):
