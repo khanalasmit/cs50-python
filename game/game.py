@@ -4,8 +4,6 @@ while True:
         n=int(input("Level: "))
         if n<=0:
             continue
-        elif n>50:
-            pass
         else:
             break
     except ValueError:
