@@ -6,7 +6,7 @@ while True:
             continue
         else:
             break
-    except TypeError:
+    except ValueErrorError:
         pass
 def guess():
     try:
@@ -29,5 +29,5 @@ while True:
         elif number>num:
             print("Too large!")
             continue
-    except TypeError:
+    except ValueErrorError:
         pass
