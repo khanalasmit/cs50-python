@@ -6,13 +6,13 @@ while True:
             continue
         else:
             break
-    except ValueErrorError:
+    except ValueError:
         pass
 def guess():
     try:
         guess=int(input("Guess: "))
         return guess
-    except TypeError:
+    except ValueError:
         pass
 while True:
     num=random.randrange(1,n)
@@ -29,5 +29,5 @@ while True:
         elif number>num:
             print("Too large!")
             continue
-    except ValueErrorError:
+    except ValueError:
         pass
