@@ -5,4 +5,4 @@ try:
     f=pyfiglet.figlet_format(string, font=sys.argv[2])
     print(f)
 except pyfiglet.FontNotFound:
-    print("Invalid usage")
+    sys.exit("Invlaid usage")
