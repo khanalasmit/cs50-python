@@ -9,11 +9,12 @@ while True:
     except ValueError:
         pass
 def guess():
-    try:
-        guess=int(input("Guess: "))
-        return guess
-    except ValueError:
-        pass
+    while True:
+        try:
+            guess=int(input("Guess: "))
+            return guess
+        except ValueError:
+            pass
 while True:
     num=random.randrange(1,n)
     try:
