@@ -5,7 +5,7 @@ while True:
         if n<0:
             continue
         elif n>100:
-            continue
+            pass
         else:
             break
     except ValueError:
