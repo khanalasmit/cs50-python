@@ -3,8 +3,6 @@ import random
 
 def main():
     level=get_level()
-    while (level>3) or (level<=0):
-        level=get_level()
     j=0
     for i in range(10):
         num1=generate_integer(level)
@@ -31,6 +29,8 @@ def main():
 def get_level():
     try:
         lev=int(input("Level: "))
+        while (level>3) or (level<=0):
+            get_level()
         return lev
     except ValueError:
         get_level()
