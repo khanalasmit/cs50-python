@@ -31,6 +31,7 @@ def get_level():
         lev=int(input("Level: "))
         while (level>3) or (level<=0):
             get_level()
+            continue
         return lev
     except ValueError:
         get_level()
