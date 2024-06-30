@@ -23,7 +23,7 @@ def main():
                 count+=1
                 print("EEE")
                 continue
-    print(f"Score:{i}")
+    print(f"Score:{j}")
 
 
 def get_level():
