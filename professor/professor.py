@@ -29,7 +29,7 @@ def main():
 def get_level():
     try:
         lev=int(input("Level: "))
-        while (level>3) or (level<=0):
+        while (lev>3) or (lev<=0):
             get_level()
             continue
         return lev
