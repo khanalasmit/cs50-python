@@ -41,10 +41,10 @@ def generate_integer(level):
         num=random.randrange(9)
         return num
     elif level==2:
-        num=random.randrange(99)
+        num=random.randrange(10,99)
         return num
     elif level==3:
-        num=random.randrange(999)
+        num=random.randrange(100,999)
         return num
 
 
