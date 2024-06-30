@@ -13,7 +13,7 @@ def main():
         count=1
         while count<=3:
             try:
-                ans=int(input(f"{num1}+{num2}="))
+                ans=int(input(f"{num1} + {num2} = "))
                 if ans!=sum:
                     count+=1
                     print("EEE")
