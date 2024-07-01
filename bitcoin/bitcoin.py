@@ -6,6 +6,8 @@ try:
     a=p["bpi"]["USD"]["rate_float"]
     try:
         b=float(sys.argv[1])
+        amount=a*b
+        print(f"{amount:,.4f}")
     except IndexError:
         print("Missing command-line argument")
     except ValueError:
@@ -14,5 +16,4 @@ try:
 except requests.RequestException:
     print("Missing command-line argument")
     sys.exit()
-amount=a*b
-print(f"{amount:,.4f}")
+
