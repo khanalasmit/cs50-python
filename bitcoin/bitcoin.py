@@ -7,7 +7,7 @@ try:
     try:
         b=float(sys.argv[1])
         amount=a*b
-        print(f"{amount:,.4f}")
+        print(f"${amount:,.4f}")
     except IndexError:
         sys.exit("Missing command-line argument")
     except ValueError:
