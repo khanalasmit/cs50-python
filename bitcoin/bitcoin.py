@@ -9,11 +9,9 @@ try:
         amount=a*b
         print(f"{amount:,.4f}")
     except IndexError:
-        print("Missing command-line argument")
+        sys.exit("Missing command-line argument")
     except ValueError:
-        print("Command-line argument is not a number")
-        sys.exit()
+        sys.exit("Command-line argument is not a number")
 except requests.RequestException:
-    print("Missing command-line argument")
-    sys.exit()
+    sys.exit("Missing command-line argument")
 
