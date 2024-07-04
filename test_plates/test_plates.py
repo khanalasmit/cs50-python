@@ -1,3 +1,3 @@
 from plates import is_valid
-def main():
-    assert is_valid("ASM066")=="Valid"
+def test():
+    assert is_valid("ASM06M")=="Valid"
