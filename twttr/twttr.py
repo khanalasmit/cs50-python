@@ -1,14 +1,17 @@
 def main():
     word=list(input("Input: "))
     string=shorten(word)
+    for x in string:
+        print(x,end="")
+    print()
 def shorten(word):
     li=["a","e","i","o","u","A","E","I","O","U"]
     j=0
     word=list(word)
     s=word
     while j<len(s):
-        if string[j] in li:
-            string.pop(j)
+        if word[j] in li:
+            word.pop(j)
         else:
             j+=1
     return word
