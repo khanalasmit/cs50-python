@@ -5,7 +5,7 @@ def main():
         print(x,end="")
     print()
 def shorten(word):
-    li=["A","E","I","O","U"]
+    li=["a","e","i","o","u"]
     j=0
     word=list(word)
     s=word
