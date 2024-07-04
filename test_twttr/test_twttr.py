@@ -1,4 +1,4 @@
-from demo import shorten
+from twttr import shorten
 
 def test_shorten():
     assert shorten("cat") == list("ct")
