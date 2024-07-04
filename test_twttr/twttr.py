@@ -14,6 +14,6 @@ def shorten(word):
             word.pop(j)
         else:
             j+=1
-    return word
+    return str(word)
 if __name__=="__main__":
     main()
