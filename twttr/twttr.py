@@ -1,5 +1,7 @@
 def main():
     string=list(input("Input: "))
+    
+def shorten(word):
     li=["a","e","i","o","u","A","E","I","O","U"]
     j=0
     string=list(string)
