@@ -1,6 +1,6 @@
 from demo import value
 
-def test():
+def test_value():
     assert value("hello") == 0
     assert value("Hello") == 0
     assert value(" hi") == 20
