@@ -1,5 +1,5 @@
-def main():
-    y=div()
+def gauge():
+    y=convert()
     z=y*100
     if 1<z<99:
         print(f"{z:.0f}%")
@@ -10,16 +10,15 @@ def main():
     else:
         print("F")
 
+def main():
+     a=input("fraction: ")
+     y=convert(a)
 
 
 
-
-
-
-def div():
-    a=input("fraction: ")
-    if isvalid(a):
-        first,last=a.split("/")
+def convert(fraction):
+    if isvalid(fraction):
+        first,last=fraction.split("/")
     else:
         div()
     while True:
