@@ -21,7 +21,7 @@ def convert(fraction):
     if isvalid(fraction):
         first,last=fraction.split("/")
     else:
-        div()
+        convert()
     while True:
         try:
             x=int(first)/int(last)
