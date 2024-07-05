@@ -27,7 +27,7 @@ def convert(fraction):
             x=int(first)/int(last)
             return x
         except (ValueError,ZeroDivisionError):
-            div()
+            convert()
             pass
 
 
