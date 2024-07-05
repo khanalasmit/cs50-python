@@ -7,38 +7,47 @@ def main():
 
 
 def is_valid(s):
-    li = "1234567890"
-    li2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
-    li3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    return (is_valid_length(s) and
+            starts_with_two_letters(s) and
+            contains_only_alphanumeric(s) and
+            has_numbers_at_end(s) and
+            first_number_not_zero(s))
 
-    # Check the length of the plate
-    if not (2 <= len(s) <= 6):
-        return False
 
-    # Check if all characters are alphanumeric
-    for char in s:
-        if char not in li2:
+def is_valid_length(s):
+    return 2 <= len(s) <= 6
+
+
+def starts_with_two_letters(s):
+    return s[0:2].isalpha()
+
+
+def contains_only_alphanumeric(s):
+    return s.isalnum()
+
+
+def has_numbers_at_end(s):
+    first_digit_index = -1
+    for i, char in enumerate(s):
+        if char.isdigit():
+            first_digit_index = i
+            break
+
+    if first_digit_index == -1:
+        return True
+
+    for char in s[first_digit_index:]:
+        if not char.isdigit():
             return False
 
-    # Check if the first two characters are letters
-    if not (s[0] in li3 and s[1] in li3):
-        return False
-
-    # Check if the plate ends in "0"
-    if s[len(s)-2]=="0":
-        return False
-
-    # Check if numbers appear in between letters
-    found_number = False
-    for i in range(2, len(s)):
-        if s[i] in li:
-            found_number = True
-        elif found_number:
-            return False
-
-    # If all checks pass, the plate is valid
     return True
 
+
+def first_number_not_zero(s):
+    for char in s:
+        if char.isdigit():
+            return char != '0'
+    return True
 
 if __name__ == "__main__":
     main()
