@@ -1,5 +1,11 @@
 def gauge(percentage):
     z=percentage*100
+    return z
+
+def main():
+    a=input("fraction: ")
+    y=convert(a)
+    z=gauge(y)
     if 1<z<99:
         print(f"{z:.0f}%")
     elif z>100:
@@ -8,11 +14,6 @@ def gauge(percentage):
         print("E")
     else:
         print("F")
-
-def main():
-    a=input("fraction: ")
-    y=convert(a)
-    gauge(y)
 
 
 
