@@ -16,7 +16,7 @@ try:
         for first,second,third in reader:
             pizza.append({one:first,two:second,three:third})
     pizza.pop(0)
-    table=tabulate.tabulate(pizza, headers="keys", tablefmt="fancy_grid")
+    table=tabulate.tabulate(pizza, headers="keys", tablefmt="grid")
 except FileNotFoundError:
     sys.exit("File does not exists")
 print(table)
