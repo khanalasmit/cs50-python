@@ -7,9 +7,8 @@ def main():
         else:
             print("Too many command-line arguments")
     if len(sys.argv)<2:
-        print("Too few command-line arguments")
-        return
-    if "." not in sys.argv[2]:
+        sys.exit("Too few command-line arguments")
+    if "." not in sys.argv[1]:
         sys.exit()
     first,second=sys.argv[1].split(".")
     if second!="py":
