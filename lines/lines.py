@@ -4,12 +4,16 @@ def main():
     if len(sys.argv) > 2:
         if ".py" in sys.argv[2]:
             return
+        else:
+            print("Too many command-line arguments")
     if len(sys.argv)<2:
         print("Too few command-line arguments")
         return
+    if "." not in sys.argv[1]:
+        return
     first,second=sys.argv[1].split(".")
     if second!="py":
-        print("Not a Python fcd ile")
+        print("Not a Python file")
     i = 0
     try:
         with open(sys.argv[1], "r") as file:
