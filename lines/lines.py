@@ -2,10 +2,7 @@ import sys
 
 def main():
     if len(sys.argv) > 2:
-        if ".py" in sys.argv[2]:
-            return
-        else:
-            print("Too many command-line arguments")
+        sys.exit("Too many command-line arguments")
     if len(sys.argv)<2:
         sys.exit("Too few command-line arguments")
     if "." not in sys.argv[1]:
