@@ -14,7 +14,7 @@ try:
         headers = next(reader)  # Read the first row as headers
         for row in reader:
             if row:  # Avoid processing empty rows
-                pizza.append(row)
+                pizza.append(dict(zip(headers, row)))
     table = tabulate.tabulate(pizza, headers="keys", tablefmt="grid")
     print(table)
 except FileNotFoundError:
