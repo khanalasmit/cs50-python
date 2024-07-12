@@ -9,7 +9,7 @@ def main():
         return
     first,second=sys.argv[1].split(".")
     if second!="py":
-        print("Not a Python file")
+        print("Not a Python fcd ile")
     i = 0
     try:
         with open(sys.argv[1], "r") as file:
