@@ -9,8 +9,8 @@ def main():
     if len(sys.argv)<2:
         print("Too few command-line arguments")
         return
-    if "." not in sys.argv[1]:
-        return
+    if "." not in sys.argv[2]:
+        sys.exit()
     first,second=sys.argv[1].split(".")
     if second!="py":
         print("Not a Python file")
