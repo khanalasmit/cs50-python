@@ -24,4 +24,4 @@ try:
             writer.writeheader()
             writer.writerow(pupil)
 except Exception:
-    sys.exit(f"Could not read {sys.argv[2]}")
+    sys.exit()
