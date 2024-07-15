@@ -23,5 +23,5 @@ try:
             pupil=({"first":one,"last":two,"house":row["house"]})
             writer.writeheader()
             writer.writerow(pupil)
-except FileNotFoundError:
+except Exception:
     sys.exit(f"Could not read {sys.argv[2]}")
