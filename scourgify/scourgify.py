@@ -14,7 +14,7 @@ try:
         for row in reader:
             students.append(row)
 except FileNotFoundError:
-    print(f"Could not read {sys.argv[1]}")
+    sys.exit(f"Could not read {sys.argv[1]}")
 try:
     with open(sys.argv[2],"a") as fp:
         writer=csv.DictWriter(fp,fieldnames=['first','last','house'])
@@ -24,4 +24,4 @@ try:
             writer.writeheader()
             writer.writerow(pupil)
 except FileNotFoundError:
-    print(f"Could not read {sys.argv[2]}")
+    sys.exit(f"Could not read {sys.argv[2]}")
