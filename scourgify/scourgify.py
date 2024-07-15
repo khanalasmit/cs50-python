@@ -20,7 +20,7 @@ try:
         writer=csv.DictWriter(fp,fieldnames=['first','last','house'])
         for row in students:
             one,two=row["name"].split(",")
-            pupil=({"first":one,"second":two,"house":row["house"]})
+            pupil=({"first":one,"last":two,"house":row["house"]})
             writer.writeheader()
             writer.writerow(pupil)
 except FileNotFoundError:
