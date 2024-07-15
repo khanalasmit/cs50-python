@@ -16,7 +16,7 @@ try:
 except FileNotFoundError:
     sys.exit(f"Could not read {sys.argv[1]}")
 try:
-    with open(sys.argv[2],"w") as fp:
+    with open(sys.argv[2],"w") as fp
     with open(sys.argv[2],"a") as fp:
         writer=csv.DictWriter(fp,fieldnames=['first','last','house'])
         for row in students:
