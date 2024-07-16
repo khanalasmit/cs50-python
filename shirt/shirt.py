@@ -8,6 +8,9 @@ li=["png","jpg","jpeg"]
 first,second=sys.argv[2].split(".").lower()
 one,two=sys.argv[3].split(".").lower()
 if two not in li and second not in li:
-    sys.exit("")
+    sys.exit("Invalid input")
+if two!=second:
+    sys.exit("Inputs and output have different extensions")
+
 
 
