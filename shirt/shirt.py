@@ -5,8 +5,8 @@ if len(sys.argv)>3:
 if len(sys.argv)<3:
     sys.exit("Too few command-line arguments")
 li=["png","jpg","jpeg"]
-first,second=sys.argv[2].split(".").lower()
-one,two=sys.argv[3].split(".").lower()
+first,second=sys.argv[1].lower().split(".")
+one,two=sys.argv[2].lower().split(".")
 if two not in li and second not in li:
     sys.exit("Invalid input")
 if two!=second:
