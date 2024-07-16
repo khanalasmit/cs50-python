@@ -1,4 +1,4 @@
-import PIL as pil
+from PIL import Image
 import sys
 if len(sys.argv)>3:
     sys.exit("Too many command-line arguments")
@@ -11,7 +11,7 @@ if two not in li and second not in li:
     sys.exit("Invalid input")
 if two!=second:
     sys.exit("Inputs and output have different extensions")
-img=pil.Image(sys.argv[2])
+img=Image.open(sys.argv[2])
 img.show()
 
 
