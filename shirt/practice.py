@@ -1,4 +1,6 @@
 from PIL import Image
-im=Image.open("nbefore.png")
-cropped_image=im.crop((600,600,600,580))
-cropped_image.save("nnbefore.png")
+import sys
+im=Image.open("shirt.png")
+base=Image.open("new.png")
+base.paste(im,(0,0),im)
+base.save("new.jpg")
