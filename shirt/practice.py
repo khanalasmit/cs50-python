@@ -1,4 +1,7 @@
-from PIL import image
+from PIL import Image
 import sys
-image=Image.open(sys.argv[1])
-image.show()
+for argument in sys.argv[1:]:
+    image=Image.open(argument)
+    size=image.size
+    print(size)
+
