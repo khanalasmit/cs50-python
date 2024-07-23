@@ -1,7 +1,7 @@
 from PIL import Image
 import sys
-for argument in sys.argv[1:]:
-    image=Image.open(argument)
-    size=image.size
-    print(size)
+im=Image.open("before1.jpg")
+im_n=im.resize(600,600)
+im_n.save("nbefore.jpg")
+
 
