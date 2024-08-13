@@ -3,7 +3,7 @@ from PIL import Image
 # Open the base image and the image to paste
 shirt_img = Image.open("shirt.png")
 nbefore_img = Image.open("before1.jpg")
-nbefore_img.crop((0,100,0,100))
+nbefore_img.crop((0,600,0,600))
 
 # Make sure both images are in the same mode
 if nbefore_img.mode != shirt_img.mode:
