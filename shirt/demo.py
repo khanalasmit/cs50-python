@@ -13,16 +13,16 @@ if nbefore_img.size != shirt_img.size:
     nbefore_img = nbefore_img.resize(shirt_img.size)
 
 # Ensure the image has an alpha channel for transparency
-nbefore_img = nbefore_img.convert("RGBA")
+shirt_img = shirt_img.convert("RGBA")
 
 # Create a new image with the same size as the base image
-new_img = Image.new("RGBA", shirt_img.size)
+new_img = Image.new("RGBA", nbefore_img.size)
 
 # Paste the base image onto the new image
-new_img.paste(shirt_img, (0, 0))
+new_img.paste(nbefore_img, (0, 0))
 
 # Paste the overlay image onto the new image with transparency mask
-new_img.paste(nbefore_img, (0, 0), nbefore_img)
+new_img.paste(shirt_img, (0, 0), shirt_img)
 
 # Save or display the result
 new_img.show()  # To display the image
