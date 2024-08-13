@@ -3,15 +3,14 @@ from PIL import Image
 # Open the base image and the image to paste
 shirt_img = Image.open("shirt.png")
 nbefore_img = Image.open("before1.jpg")
-nbefore_img.crop((100,0,0,0))
+nbefore_img.crop((0,100,0,100))
 
 # Make sure both images are in the same mode
 if nbefore_img.mode != shirt_img.mode:
     nbefore_img = nbefore_img.convert(shirt_img.mode)
 
 # Optionally resize the image to paste if it's too large for the base image
-if nbefore_img.size != shirt_img.size:
-    nbefore_img = nbefore_img.resize(shirt_img.size)
+
 
 # Ensure the image has an alpha channel for transparency
 shirt_img = shirt_img.convert("RGBA")
