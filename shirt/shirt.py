@@ -11,8 +11,8 @@ if two not in li and second not in li:
     sys.exit("Invalid input")
 if two!=second:
     sys.exit("Inputs and output have different extensions")
-shirt_img = Image.open()
-nbefore_img = Image.open("before1.jpg")
+shirt_img = Image.open(sys.argv[1])
+nbefore_img = Image.open(sys.argv[2])
 
 # Make sure both images are in the same mode
 if nbefore_img.mode != shirt_img.mode:
