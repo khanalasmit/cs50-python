@@ -27,7 +27,7 @@ class Validation:
 
 def main():
     dateofbirth = DOB()
-    today = date(2003, 1, 1)  # Set the date to 2003-01-01
+    today = date(2000, 1, 1)  # Set the date to 2003-01-01
     year, month, day = dateofbirth.dateofbirth.strip().split("-")
     year, month, day = int(year), int(month), int(day)
 
