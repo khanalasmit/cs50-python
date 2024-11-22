@@ -55,7 +55,9 @@ def main():
     total_min += days_in_current_year * 24 * 60
 
     in_word=num2words(total_min).replace(" and","")
-    print(in_word+" minutes")
+    in_word=in_word+" minutes"
+    print(in_word.capitalize())
+
 
 
 def DOB():
