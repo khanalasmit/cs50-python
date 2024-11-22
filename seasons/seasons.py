@@ -52,7 +52,7 @@ def main():
     days_in_current_year = 0
     for i in range(1, today.month):
         days_in_current_year += calendar.monthrange(age, i)[1]
-    days_in_current_year += today.day
+    days_in_current_year -= today.day
     total_min += days_in_current_year * 24 * 60
 
     print(num2words(total_min))
