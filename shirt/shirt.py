@@ -1,39 +1,48 @@
-from PIL import Image
 import sys
-if len(sys.argv)>3:
-    sys.exit("Too many command-line arguments")
-if len(sys.argv)<3:
-    sys.exit("Too few command-line arguments")
-li=["png","jpg","jpeg"]
-first,second=sys.argv[1].lower().split(".")
-one,two=sys.argv[2].lower().split(".")
-if two not in li and second not in li:
-    sys.exit("Invalid input")
-if two!=second:
-    sys.exit("Inputs and output have different extensions")
-shirt_img = Image.open(sys.argv[1])
-nbefore_img = Image.open(sys.argv[2])
+from PIL import Image, ImageOps
 
-# Make sure both images are in the same mode
-if nbefore_img.mode != shirt_img.mode:
-    nbefore_img = nbefore_img.convert(shirt_img.mode)
+def main():
+    # Check for correct number of arguments
+    if len(sys.argv) != 3:
+        sys.exit("Usage: python shirt.py <input> <output>")
 
-# Optionally resize the image to paste if it's too large for the base image
-if nbefore_img.size != shirt_img.size:
-    nbefore_img = nbefore_img.resize(shirt_img.size)
+    input_path = sys.argv[1]
+    output_path = sys.argv[2]
 
-# Ensure the image has an alpha channel for transparency
-shirt_img = shirt_img.convert("RGBA")
+    # Validate file extensions
+    valid_extensions = (".jpg", ".jpeg", ".png")
+    if not input_path.lower().endswith(valid_extensions):
+        sys.exit("Invalid input")
+    if not output_path.lower().endswith(valid_extensions):
+        sys.exit("Invalid output")
 
-# Create a new image with the same size as the base image
-new_img = Image.new("RGBA", nbefore_img.size)
+    # Check if input and output have the same extension
+    if input_path.split(".")[-1].lower() != output_path.split(".")[-1].lower():
+        sys.exit("Input and output have different extensions")
 
-# Paste the base image onto the new image
-new_img.paste(nbefore_img, (0, 0))
+    # Try opening the input file
+    try:
+        input_image = Image.open(input_path)
+    except FileNotFoundError:
+        sys.exit("Input does not exist")
 
-# Paste the overlay image onto the new image with transparency mask
-new_img.paste(shirt_img, (0, 0), shirt_img)
+    # Open shirt.png
+    try:
+        shirt = Image.open("shirt.png")
+    except FileNotFoundError:
+        sys.exit("shirt.png not found")
 
-new_img.save("output.png")  # To save the image
+    # Resize and crop input image to fit the shirt
+    input_image = ImageOps.fit(input_image, shirt.size, method=Image.Resampling.LANCZOS)
 
+    # Overlay the shirt onto the input image
+    input_image.paste(shirt, mask=shirt)
 
+    # Save the output
+    try:
+        input_image.save(output_path)
+    except Exception as e:
+        sys.exit(f"Could not save output: {e}")
+
+if __name__ == "__main__":
+    main()
