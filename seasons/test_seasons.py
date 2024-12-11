@@ -1,23 +1,47 @@
-from seasons import calculate_minutes, convert_to_words
+import pytest
 from datetime import date
+from seasons import calculate_minutes, DateOfBirth
 
-def test_calculate_minutes():
-    # Test 1 year ago (non-leap year)
-    birth_date = date(2023, 11, 27)
-    assert calculate_minutes(birth_date) == 525600
 
-    # Test 1 year ago (leap year)
-    birth_date = date(2019, 11, 27)
-    assert calculate_minutes(birth_date) == 527040
+def test_valid_date():
+    dob = DateOfBirth("2000-01-01")
+    assert str(dob) == "2000-01-01"
 
-    # Test arbitrary date
-    birth_date = date(2000, 1, 1)
-    today = date(2024, 11, 27)
-    delta = today - birth_date
-    expected_minutes = round(delta.total_seconds() / 60)
-    assert calculate_minutes(birth_date) == expected_minutes
 
-def test_convert_to_words():
-    assert convert_to_words(525600) == "five hundred twenty five thousand six hundred"
-    assert convert_to_words(527040) == "five hundred twenty seven thousand forty"
-    assert convert_to_words(1051200) == "one million fifty one thousand two hundred"
+def test_invalid_date_format():
+    with pytest.raises(SystemExit):
+        DateOfBirth("01-01-2000")
+
+
+def test_invalid_date_logic():
+    with pytest.raises(SystemExit):
+        DateOfBirth("2000-02-30")
+
+
+def test_calculate_minutes_non_leap():
+    dob = DateOfBirth("1999-01-01")
+    today = date(2000, 1, 1)
+    assert calculate_minutes(dob) == 525600  # Non-leap year
+
+
+def test_calculate_minutes_leap():
+    dob = DateOfBirth("1996-01-01")
+    today = date(2000, 1, 1)
+    assert calculate_minutes(dob) == 2103840  # Includes leap years
+
+
+def test_calculate_partial_year():
+    dob = DateOfBirth("1998-06-20")
+    today = date(2000, 1, 1)
+    assert calculate_minutes(dob) == 806400
+
+
+def test_edge_case_today():
+    dob = DateOfBirth("2023-12-11")
+    today = date(2023, 12, 11)
+    assert calculate_minutes(dob) == 0  # Born today
+
+
+def test_future_date():
+    with pytest.raises(ValueError):
+        dob = DateOfBirth("3000-01-01")
