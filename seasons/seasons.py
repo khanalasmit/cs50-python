@@ -1,36 +1,36 @@
-from datetime import date
+from datetime import date, datetime
+import inflect
 import sys
-from num2words import num2words
 
-
-class DateOfBirth:
-    def __init__(self, date_of_birth):
+class AgeInMinutes:
+    def __init__(self, dob):
         try:
-            year, month, day = map(int, date_of_birth.split("-"))
-            self.birth_date = date(year, month, day)
-        except (ValueError, IndexError):
-            sys.exit("Invalid date")
 
+            self.dob = datetime.strptime(dob, "%Y-%m-%d").date()
+        except ValueError:
+            print("Error: Invalid date format. Please enter the date in 'YYYY-MM-DD' format.")
+            sys.exit(1)
+
+        self.today = date.today()
+        self.p = inflect.engine()
+
+    def calculate_age_in_minutes(self):
+
+        delta = self.today - self.dob
+        age_in_minutes = delta.total_seconds() // 60
+
+        words = self.p.number_to_words(int(age_in_minutes), andword=" ")
+
+
+        return words
     def __str__(self):
-        return self.birth_date.isoformat()
-
-
-def calculate_minutes(dob):
-    """Calculate the total minutes from the date of birth to today."""
-    today = date.today()
-    delta = today - dob.birth_date
-    return delta.days * 24 * 60  # Convert days to minutes
-
+        return f"{self.calculate_age_in_minutes()}"
 
 def main():
-    dob_input = input("Date of Birth (YYYY-MM-DD): ")
-    dob = DateOfBirth(dob_input)
-    total_minutes = calculate_minutes(dob)
-    minutes_in_words = (
-        num2words(total_minutes, to="number").replace(" and", "").lower() + " minutes"
-    )
-    print(minutes_in_words.capitalize())
-
+    dob = input("Enter your date of birth (YYYY-MM-DD): ")
+    age_in_minutes = AgeInMinutes(dob)
+    age_in_minutes_ = str(age_in_minutes).capitalize()
+    print(f"{age_in_minutes_} minutes" )
 
 if __name__ == "__main__":
     main()
