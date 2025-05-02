@@ -2,10 +2,8 @@ import pytest
 from io import StringIO
 from contextlib import redirect_stdout
 
-# Importing your Tic-Tac-Toe functions
 from test import winner, gameover, display_board
 
-# Test data
 def test_winner():
     global sideA, sideB, board
     # Test Case 1: Side A wins horizontally
