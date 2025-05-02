@@ -2,7 +2,7 @@ import pytest
 from io import StringIO
 from contextlib import redirect_stdout
 
-from test import winner, gameover, display_board
+from project import winner, gameover, display_board
 
 def test_winner():
     global sideA, sideB, board
