@@ -15,9 +15,7 @@ The course is designed for beginners and covers the foundations of programming u
 - Error Handling
 - Introduction to Object-Oriented Programming
 
-## 🛠️ What You'll Find Here
-
-- `notebooks/` – Jupyter notebooks with exercises and explanations  
+## 🛠️ What You'll Find Here 
 - `projects/` – Mini-projects or final project from the course  
 - `examples/` – Example scripts covering different Python concepts  
 - `README.md` – This file
@@ -33,6 +31,8 @@ The course is designed for beginners and covers the foundations of programming u
 ## ✅ Certificate
 
 I have successfully completed the course and earned a certificate of completion from edX.
+![CS50P](https://github.com/user-attachments/assets/3d5f6a06-b8dd-4f68-9fdc-be11967cdc2b)
+
 
 
 ## 📎 Course Link
@@ -41,7 +41,7 @@ I have successfully completed the course and earned a certificate of completion 
 
 ## 📩 Contact
 
-If you have any questions or want to collaborate, feel free to reach out via [GitHub](https://github.com/khanalasmit) or email.
+If you have any questions or want to collaborate, feel free to reach out via [GitHub](https://github.com/khanalasmit).
 
 ---
 
